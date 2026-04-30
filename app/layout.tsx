@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { siteMetadata } from "./lib/metadata";
 import { Rubik} from "next/font/google";
 import "./globals.css";
+import Navbar from "@/app/components/navbar";
 
 const font = Rubik({
   weight: ["400", "500", "700","800","900"],
@@ -23,7 +24,10 @@ export default function RootLayout({
       lang="en"
       className={`${font.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body >
+          <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
