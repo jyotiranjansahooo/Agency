@@ -20,3 +20,69 @@ html, body {
 button {
   background: var(--primary);
 }
+
+
+.loader {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #0b0b0b;
+  overflow: hidden;
+}
+
+.mask {
+  display: flex;
+  overflow: hidden;
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.char {
+  display: inline-block;
+  transform: translateY(120%);
+  color: #fff;
+}
+
+/* Skeleton */
+.skeleton {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 2rem;
+  background: #0b0b0b;
+}
+
+.bar {
+  height: 14px;
+  width: 100%;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    #1a1a1a 25%,
+    #2a2a2a 37%,
+    #1a1a1a 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+.bar.large {
+  height: 40px;
+  width: 60%;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0 }
+  100% { background-position: 0 0 }
+}
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: #111;
+  z-index: 9999;
+  transform: translateY(100%);
+}

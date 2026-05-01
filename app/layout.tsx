@@ -3,6 +3,7 @@ import { siteMetadata } from "./lib/metadata";
 import { Rubik} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/components/navbar";
+import PageTransition from "@/app/components/PageTransition";
 
 const font = Rubik({
   weight: ["400", "500", "700","800","900"],
@@ -26,6 +27,7 @@ export default function RootLayout({
     >
       <body >
           <Navbar />
+          <PageTransition />
         {children}
       </body>
     </html>
